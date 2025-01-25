@@ -19,4 +19,13 @@ router.post('/create',async(req,res)=>{
     }
 })
 
+router.get('/',async(req,res) => {
+    try {
+        const products= await Product.find()
+        res.json(products)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router
