@@ -13,7 +13,7 @@ router.post('/create',async(req,res)=>{
             gamma:productGamma,
         })
         await product.save()
-        res.status(201)
+        res.status(201).json(product)
     } catch (error) {
         console.log(error)
     }
