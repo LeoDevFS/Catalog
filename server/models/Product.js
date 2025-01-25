@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
-const ProductSchema = new mongoose.MongooseSchema({
+const ProductSchema = new mongoose.Schema({
     brand: String,
     sae: String,
-    gamma: String
+    gamma: String,
+
 },{timestamps: true})
 
 const Product = mongoose.model('Product',ProductSchema)
