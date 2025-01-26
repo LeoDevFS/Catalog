@@ -3,6 +3,7 @@ const ProductSchema = new mongoose.Schema({
     brand: String,
     sae: String,
     gamma: String,
+    subname:String
 
 },{timestamps: true})
 
