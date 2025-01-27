@@ -6,11 +6,21 @@
     <title>Catalogo</title>
 </head>
 <body>
-    <label for="productBrand">buscar por marca</label>
-    <input type="text" id="productBrand" placeholder="introduce marca">
+   <h1>HOME</h1>
+   <form id="createForm">
+    <input type="text" name="marca" id="marca" placeholder="Marca">
+    <input type="submit" value="Crear">
+   </form>
 
-    <button id="buscar" onclick="searchBrand()">Buscar</button>
-    <div id="container"></div>
-    <script src="./script.js"></script> 
+   <div id="container"> </div>
+   <script src="./script.js"></script> 
+   <script src="./scriptTest.js"></script> 
+   <script>
+       document.getElementById('createForm').onsubmit = function(event) {
+           event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+           const brand = document.getElementById('marca').value;
+           createProduct(brand); // Llamar a la función createProduct
+       };
+   </script>
 </body>
 </html>
