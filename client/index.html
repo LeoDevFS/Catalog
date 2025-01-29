@@ -8,18 +8,20 @@
 <body>
    <h1>HOME</h1>
    <form id="createForm">
-    <input type="text" name="marca" id="marca" placeholder="Marca">
+    <input type="text" name="marca" id="marca" placeholder="Marca" required>
+    <input type="text" name="sae" id="sae" placeholder="Densidad" required>
     <input type="submit" value="Crear">
    </form>
 
    <div id="container"> </div>
-   <script src="./script.js"></script> 
+   
    <script src="./scriptTest.js"></script> 
    <script>
        document.getElementById('createForm').onsubmit = function(event) {
-           event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+           event.preventDefault(); 
            const brand = document.getElementById('marca').value;
-           createProduct(brand); // Llamar a la función createProduct
+           const sae = document.getElementById('sae').value;
+           createProduct(brand,sae);
        };
    </script>
 </body>
