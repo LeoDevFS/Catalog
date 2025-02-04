@@ -5,7 +5,8 @@ const ProductSchema = new mongoose.Schema({
     gamma: String,
     subname:String,
     approval:Array,
-    price:String
+    format:Number,
+    price:Number
 
 },{timestamps: true})
 

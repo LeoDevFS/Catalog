@@ -14,6 +14,10 @@ document.getElementById('createForm').onsubmit = function(event) {
       body: JSON.stringify({
         brand: marca,
         sae: sae,
+        gamma:gamma,
+        subname:subname,
+        approval:approval,
+        price:price
       }),
     })
       .then((response) => {
