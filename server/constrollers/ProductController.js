@@ -18,6 +18,7 @@ const ProductController = {
             const productSubname = req.body.subname
             const productApproval = req.body.approval
             const productPrice = req.body.approval
+            const productLiters = req.body.productLiters
             
             const product = new Product({
                 brand:productBrand,
@@ -25,6 +26,7 @@ const ProductController = {
                 gamma:productGamma,
                 subname:productSubname,
                 approval:productApproval,
+                liters:productLiters,
                 price:productPrice
             })
             await product.save()
@@ -51,6 +53,7 @@ const ProductController = {
             const gamma= req.body.gamma
             const subname = req.body.subname
             const productApproval = req.body.approval
+            const productLiters = req.body.approval
             const productPrice = req.body.approval
     
             const product = await Product.findByIdAndUpdate(
@@ -60,6 +63,7 @@ const ProductController = {
                     sae,
                     subname,
                     productApproval,
+                    productLiters,
                     productPrice
                 },{new:true}
             )

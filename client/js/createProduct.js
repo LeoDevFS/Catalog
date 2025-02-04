@@ -1,3 +1,5 @@
+const { format } = require("path");
+
 document.getElementById('createForm').onsubmit = function(event) {
     event.preventDefault(); 
     const brand = document.getElementById('marca').value;
@@ -17,6 +19,7 @@ document.getElementById('createForm').onsubmit = function(event) {
         gamma:gamma,
         subname:subname,
         approval:approval,
+        liters:liters,
         price:price
       }),
     })
