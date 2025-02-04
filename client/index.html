@@ -7,22 +7,9 @@
 </head>
 <body>
    <h1>HOME</h1>
-   <form id="createForm">
-    <input type="text" name="marca" id="marca" placeholder="Marca" required>
-    <input type="text" name="sae" id="sae" placeholder="Densidad" required>
-    <input type="submit" value="Crear">
-   </form>
-
-   <div id="container"> </div>
-   
-   <script src="./scriptTest.js"></script> 
-   <script>
-       document.getElementById('createForm').onsubmit = function(event) {
-           event.preventDefault(); 
-           const brand = document.getElementById('marca').value;
-           const sae = document.getElementById('sae').value;
-           createProduct(brand,sae);
-       };
-   </script>
+   <a href="./views/create.html">crear</a>
+    <script>
+       
+</script>
 </body>
 </html>
