@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 function GetAll() {
   const [datos, setDatos] = useState(null);
@@ -7,12 +8,11 @@ function GetAll() {
   useEffect(() => {
     const getApi = async () => {
       try {
-        const response = await fetch("http://localhost:3000");
-        const datos = await response.json();
-        console.log(datos);
-        setDatos(datos);
+        const response = await fetch("http://localhost:3000")
+        const datos = await response.json()
+        setDatos(datos)
       } catch (error) {
-        console.error("error al acceder a la api", error);
+        console.error("error al acceder a la api", error)
       }
     };
     getApi();
@@ -29,15 +29,18 @@ function GetAll() {
               alt="aceite"
             />
             <div className="card-body">
-              <h2 className="card-title"> {product.brand}</h2>
+            <Link to={`/id/${product._id}`}>
+            
+              <h2 className="card-title"> {product.brand} </h2>
 
-              <p className="card-text">SAE: {product.sae}</p>
+              <p className="card-text"> {product.sae}</p>
 
               <p className="card-text">{product.gamma}</p>
-
+              
               {product.subname && (
                 <p className="card-text">{product.subname}</p>
               )}
+              </Link>
             </div>
           </div>
         ))}
