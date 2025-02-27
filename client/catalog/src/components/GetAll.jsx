@@ -11,23 +11,23 @@ function GetAll({filters}) {
   useEffect(() => {
     const getApi = async () => {
       try {
-        const response = await fetch("http://localhost:3000");
-        const datos = await response.json();
-        setDatos(datos);
+        const response = await fetch("http://localhost:3000")
+        const datos = await response.json()
+        setDatos(datos)
       } catch (error) {
-        console.error("error al acceder a la api", error);
+        console.error("error al acceder a la api", error)
       }
-    };
-    getApi();
-  }, []);
+    }
+    getApi()
+  }, [])
 
-  const filteredProducts = datos.filter((product)=>{
+  const filteredProducts = datos ? datos.filter((product)=>{
     return(
        (filters.sae === "" || product.sae === filters.sae) &&
       (filters.brand === "" || product.brand === filters.brand) &&
       (filters.litres === "" || product.litres === filters.litres)
     )
-  })
+  }) : []
 
   const openModal = (product) => {
     setSelectedProduct(product)

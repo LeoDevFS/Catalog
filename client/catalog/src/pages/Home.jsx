@@ -29,7 +29,7 @@ function Home() {
         <FilterSelector filters={filters} onFilterChange={handleFiltersChange}/>
         <input type="text" placeholder="search" />
         <Link to={"/dashboard"}>Dashboard</Link>
-        <Link to={"/id/:_id"}>ProductDetails</Link>
+        {/*<Link to={"/id/:_id"}>ProductDetails</Link>*/}
         
       </nav>
       <GetAll filters={filters} />
