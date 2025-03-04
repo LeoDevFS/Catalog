@@ -7,11 +7,13 @@ function GetAll({filters}) {
   const [datos, setDatos] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  
 
   useEffect(() => {
     const getApi = async () => {
       try {
-        const response = await fetch("http://localhost:3000")
+        const apiUrl = import.meta.env.VITE_APP_APIURL
+        const response = await fetch(apiUrl)
         const datos = await response.json()
         setDatos(datos)
       } catch (error) {
