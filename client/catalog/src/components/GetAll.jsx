@@ -25,7 +25,7 @@ function GetAll({filters}) {
     return(
        (filters.sae === "" || product.sae === filters.sae) &&
       (filters.brand === "" || product.brand === filters.brand) &&
-      (filters.litres === "" || product.litres === filters.litres)
+      (filters.liters === "" ||String(product.liters)  === String(filters.liters))
     )
   }) : []
 
@@ -55,6 +55,8 @@ function GetAll({filters}) {
               <p className="card-text"> {product.sae}</p>
               <p className="card-text">{product.gamma}</p>
               {product.subname && <p className="card-text">{product.subname}</p>}
+             
+             
             </div>
           </div>
         ))}

@@ -4,9 +4,9 @@ const ProductSchema = new mongoose.Schema({
     sae: String,
     gamma: String,
     subname:String,
-    approval:Array,
     liters:Number,
-    price:Number
+    price:Number,
+    approval:Array,
 
 },{timestamps: true})
 

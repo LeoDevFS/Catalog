@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { allSae, allBrands } from "../assets/gnrlData"
+import { allSae, allBrands, allLiters } from "../assets/gnrlData"
 
 const FilterSelector = ({ filters, onFilterChange }) => {
   return (
@@ -21,13 +21,17 @@ const FilterSelector = ({ filters, onFilterChange }) => {
           </option>
         ))}
       </select>
-      <select name="litres" value={filters.litres} onChange={onFilterChange}>
-        <option value="">Select Litres</option>
-        <option value="1L">1L</option>
-        <option value="5L">5L</option>
-        <option value="10L">10L</option>
+      <select name="liters" value={filters.liters} onChange={onFilterChange}>
+        <option value="">Select Format</option>
+        {allLiters.map((liters)=>(
+          <option key={liters} value={liters}>
+            {liters}
+          </option>
+        ))}
       </select>
+      
     </div>
+    
   );
 };
 

@@ -31,6 +31,7 @@ function ProductDetails() {
           <h1>{datos.brand}</h1>
           <p>SAE: {datos.sae}</p>
           <p>Gamma: {datos.gamma}</p>
+          <p>Price: {datos.price}</p>
           {datos.subname && <p>Subname: {datos.subname}</p>}
           <button>DELETE</button>
           <button>EDIT</button>

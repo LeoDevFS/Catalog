@@ -144,19 +144,39 @@ body{
 
 /*===================================================================================================*/
 .formCreateProduct{
-  width: 30vh;
+  max-height: 100vh;
+  min-height: 50vh;
+  width: 50%;
   height: min-content;
   border-radius: 5%;
-  margin: 10%;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 11px rgba(40, 227, 2, 0.26);
+}
+
+.textInputs{
+  
   display: flex;
   flex-direction: column;
   padding: 10px;
-
   
-  box-shadow: 0px 0px 5px 11px rgba(40, 227, 2, 0.26);
 }
+
 input::placeholder {
   text-align: center;
+}
+
+.approvalAdder{
+width: 100%;
+max-height: 20vh;
+display: flex;
+}
+
+.allApprovals{
+  border: 2px solid red;
+  height: 50vh;
+  overflow: scroll;
 }
 
 /*=================================================================================================================*/

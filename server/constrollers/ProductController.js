@@ -16,18 +16,18 @@ const ProductController = {
             const productSae = req.body.sae;
             const productGamma = req.body.gamma
             const productSubname = req.body.subname
+            const productLiters = req.body.liters
+            const productPrice = req.body.price
             const productApproval = req.body.approval
-            const productPrice = req.body.approval
-            const productLiters = req.body.productLiters
             
             const product = new Product({
                 brand:productBrand,
                 sae:productSae,
                 gamma:productGamma,
                 subname:productSubname,
-                approval:productApproval,
                 liters:productLiters,
-                price:productPrice
+                price:productPrice,
+                approval:productApproval
             })
             await product.save()
             res.status(201).json(product)
@@ -52,9 +52,9 @@ const ProductController = {
             const sae = req.body.sae
             const gamma= req.body.gamma
             const subname = req.body.subname
+            const productLiters = req.body.liters
+            const productPrice = req.body.price
             const productApproval = req.body.approval
-            const productLiters = req.body.approval
-            const productPrice = req.body.approval
     
             const product = await Product.findByIdAndUpdate(
                 idProduct,{
@@ -62,9 +62,9 @@ const ProductController = {
                     gamma,
                     sae,
                     subname,
-                    productApproval,
                     productLiters,
-                    productPrice
+                    productPrice,
+                    productApproval
                 },{new:true}
             )
             res.json(product)

@@ -12,6 +12,7 @@ function Modal({ isOpen, onClose, product }) {
         <p>{product.sae}</p>
         <p>{product.gamma}</p>
         {product.subname && <p>{product.subname}</p>}
+        <p>{product.price}€</p>
         <img
           className="aceiteIndividual"
           src="https://www.castrol.com/content/dam/castrol/country-sites-new/en_gb/united-kingdom/home/car-engine-oils/egde_0w20_ll_iv.jpg"
