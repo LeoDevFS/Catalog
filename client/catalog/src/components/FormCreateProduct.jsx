@@ -1,6 +1,7 @@
 import { useState } from "react";
 import approvals from "../assets/approvals";
 
+
 function FormCreateProduct() {
   const [brand, setBrand] = useState("");
   const [sae, setSae] = useState("");
@@ -11,7 +12,7 @@ function FormCreateProduct() {
   const [selectedApprovals, setSelectedApprovals] = useState([]);
   const [expandedKey, setExpandedKey] = useState(null);
 
-  const urlApiCreate = "http://localhost:3000/create";
+  const urlApiCreate = `${import.meta.env.VITE_APP_APIURL}/create`
   const [res, setRes] = useState(null);
 
 
