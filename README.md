@@ -68,6 +68,8 @@ PORT= ****
 
 ## Uso
 
+Tanto en client como en server hay un Readme mas Detallado.
+
 ## Cliente
 La aplicación cliente permite a los usuarios ver una lista de productos filtrados por SAE, marca y formato. Los usuarios también pueden crear nuevos productos a través de un formulario.
 
@@ -79,6 +81,7 @@ GET /: Obtener todos los productos.
 GET /id/:_id: Obtener un producto por su ID.
 PUT /id/:_id: Actualizar un producto por su ID.
 DELETE /id/:_id: Eliminar un producto por su ID.
+
 Mejoras Futuras
 Este proyecto está en constante evolución y se le irán implementando nuevas funcionalidades y mejoras. Algunas de las mejoras planificadas incluyen:
 
