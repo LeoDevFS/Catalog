@@ -40,6 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+@media (max-width: 900px) {
+ .formCreateProduct{
+  flex-direction: column;
+  min-height: min-content;
+ }
+.approvalAdder{
+  height: 50%;
+}
+ .allApprovals{
+background-color: #5ed588;
+ }
+
+  
+}
 /*=====================================================================================================*/
 .bodyHome{
   display: flex;
@@ -113,7 +127,6 @@
   font-size: 80%;
   color: #000000;
   text-align: center;
-  
 }
 
 .productCard.petronas{
