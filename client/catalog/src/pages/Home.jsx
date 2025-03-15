@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import "../App.css";
-import GetAll from "../components/GetAll";
-import { useState } from "react";
-import FilterSelector from "../components/FilterSelector";
+import { Link } from "react-router-dom"
+import "../App.css"
+import GetAll from "../components/GetAll"
+import { useState } from "react"
+import FilterSelector from "../components/FilterSelector"
 
 
 

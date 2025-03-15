@@ -1,24 +1,24 @@
-import { useState } from "react";
-import approvals from "../assets/approvals";
+import { useState } from "react"
+import approvals from "../assets/approvals"
 
 
 function FormCreateProduct() {
-  const [brand, setBrand] = useState("");
-  const [sae, setSae] = useState("");
-  const [gamma, setGammma] = useState("");
-  const [subname, setSubname] = useState("");
-  const [liters, setLiters] = useState("");
+  const [brand, setBrand] = useState("")
+  const [sae, setSae] = useState("")
+  const [gamma, setGammma] = useState("")
+  const [subname, setSubname] = useState("")
+  const [liters, setLiters] = useState("")
   const [price,setPrice] = useState("")
-  const [selectedApprovals, setSelectedApprovals] = useState([]);
-  const [expandedKey, setExpandedKey] = useState(null);
+  const [selectedApprovals, setSelectedApprovals] = useState([])
+  const [expandedKey, setExpandedKey] = useState(null)
 
   const urlApiCreate = `${import.meta.env.VITE_APP_APIURL}/create`
-  const [res, setRes] = useState(null);
+  const [res, setRes] = useState(null)
 
 
   const handleSubmit = async (e) => {
     
-    e.preventDefault();
+    e.preventDefault()
     setRes("");
     const payload = {
       brand,
@@ -38,34 +38,34 @@ function FormCreateProduct() {
         },
         body: JSON.stringify(payload),
       });
-      console.log("Response status:", response.status);
+      console.log("Response status:", response.status)
       if (response.ok) {
-        const data = await response.json();
-        setRes(` ${data.brand} ${data.sae}`);
-        setBrand("");
-        setGammma("");
-        setSae("");
-        setSubname("");
-        setLiters("");
+        const data = await response.json()
+        setRes(` ${data.brand} ${data.sae}`)
+        setBrand("")
+        setGammma("")
+        setSae("")
+        setSubname("")
+        setLiters("")
         setPrice("")
-        setSelectedApprovals([]);
+        setSelectedApprovals([])
       }else{
         console.error("Error in response:", response.statusText)
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
   const handleApprovalChange = (approval) => {
     setSelectedApprovals((prevState) =>
       prevState.includes(approval)
         ? prevState.filter((a) => a !== approval)
         : [...prevState, approval]
-    );
-  };
+    )
+  }
   const handleKeyClick = (key) => {
-    setExpandedKey(expandedKey === key ? null : key);
-  };
+    setExpandedKey(expandedKey === key ? null : key)
+  }
 
 
   return (
@@ -167,7 +167,7 @@ function FormCreateProduct() {
       </form>
       {res && <h2>Se ha creado el producto : {res}</h2>}
     </>
-  );
+  )
 }
 
-export default FormCreateProduct;
+export default FormCreateProduct

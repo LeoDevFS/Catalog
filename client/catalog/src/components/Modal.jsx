@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import "../App.css";
+import "../App.css"
 
 function Modal({ isOpen, onClose, product }) {
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
     <div className="modal-overlay">
@@ -21,7 +21,7 @@ function Modal({ isOpen, onClose, product }) {
         <button className="close-button" onClick={onClose}>x</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Modal;
+export default Modal

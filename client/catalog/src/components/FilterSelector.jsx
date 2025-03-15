@@ -32,7 +32,7 @@ const FilterSelector = ({ filters, onFilterChange }) => {
       
     </div>
     
-  );
-};
+  )
+}
 
-export default FilterSelector;
+export default FilterSelector

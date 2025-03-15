@@ -181,19 +181,19 @@ background-color: #5ed588;
 }
 
 input::placeholder {
-  border: 2px solid red;
+
   text-align: center;
 
 }
 
 .approvalAdder{
-  border: 2px solid red;
+
   display: flex;
 
 }
 
 .allApprovals{
-  border: 2px solid red;
+  
   height: 100%;
   overflow: scroll;
 
@@ -214,6 +214,7 @@ input::placeholder {
 
 .modal-content {
   background: white;
+  margin: auto;
   padding: 20px;
   border-radius: 50px;
   max-width: 500px;
