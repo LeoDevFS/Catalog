@@ -215,6 +215,7 @@ input::placeholder {
 .modal-content {
   background: white;
   margin: auto;
+  color: blue;
   padding: 20px;
   border-radius: 50px;
   max-width: 500px;
