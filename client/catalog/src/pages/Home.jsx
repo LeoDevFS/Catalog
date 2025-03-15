@@ -27,8 +27,9 @@ function Home() {
     <h1 className="namePage">Home</h1>
       <nav className="navBar">
         <FilterSelector filters={filters} onFilterChange={handleFiltersChange}/>
-        <input type="text" placeholder="search" />
-        <Link to={"/dashboard"}>Dashboard</Link>
+        <div className="linkDashboard">
+        <Link  to={"/dashboard"}>Dashboard</Link>
+        </div>
       
         
       </nav>
