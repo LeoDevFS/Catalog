@@ -2,11 +2,13 @@
 import { useEffect, useState } from "react"
 import "../App.css"
 import Modal from "./Modal"
+import Loading from "../loading"
 
 function GetAll({ filters }) {
   const [datos, setDatos] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getApi = async () => {
@@ -18,6 +20,8 @@ function GetAll({ filters }) {
         setDatos(datos)
       } catch (error) {
         console.error("error al acceder a la api", error)
+      } finally {
+        setLoading(false)
       }
     }
     getApi()
@@ -44,6 +48,10 @@ function GetAll({ filters }) {
   }
 
   console.log(filteredProducts)
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <div className="productListContainer">

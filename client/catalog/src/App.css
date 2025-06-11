@@ -1,18 +1,20 @@
 #root {
   width: 100%;
   margin: 0 auto;
- 
   text-align: center;
+  background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+  font-family: 'Inter', sans-serif;
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms, transform 300ms;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.1);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -34,174 +36,194 @@
 }
 
 .card {
-  padding: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff, #f9fafb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .read-the-docs {
   color: #888;
+  font-size: 1rem;
 }
-@media (max-width: 900px) {
- .formCreateProduct{
-  flex-direction: column;
-  min-height: min-content;
- }
-.approvalAdder{
-  height: 50%;
-}
- .allApprovals{
-background-color: #5ed588;
- }
 
-  
+@media (max-width: 900px) {
+  .formCreateProduct {
+    flex-direction: column;
+    min-height: min-content;
+    background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .approvalAdder {
+    height: 50%;
+    display: flex;
+  }
+  .allApprovals {
+    background-color: #5ed588;
+    border-radius: 8px;
+    padding: 10px;
+  }
 }
+
 /*=========================================GENERAL============================================================*/
-.bodyHome{
+.bodyHome {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+  padding: 20px;
 }
 
-.namePage{
-  padding: 1px;
+.namePage {
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d3748;
 }
 
 /*=========================================NAV============================================================*/
-.navBar{
-  margin: 10px;
+.navBar {
+  margin: 20px auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background: linear-gradient(135deg, #a4b2e9, #2bd7ee);
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.linkDashboard{
- margin: 10px;
+.linkDashboard {
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3182ce;
+  transition: color 0.3s;
+}
+.linkDashboard:hover {
+  color: #2b6cb0;
 }
 
 /*=======================================HOME==============================================================*/
-
-
-.productListContainer{
+.productListContainer {
   width: 100vw;
-  height: 90vh;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   margin: 10px;
+  justify-content: center;
 }
 
-.productCard{
-  min-width: 120PX;
-  max-width: 200px;
-  max-height: 180PX;
-  display: flex; 
-  flex-direction: column; 
+.productCard {
+  min-width: 150px;
+  max-width: 250px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
   margin: 0.5%;
-  border-radius: 16px  16px 16px 16px;
+  border-radius: 16px;
   width: 30vw;
-  box-shadow: 2px 7px 13px 5px rgba(2, 96, 2, 0.474);
-  overflow: hidden; 
-  border-color: #000000;
+  background: linear-gradient(135deg, #ffffff, #f7fafc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   align-items: center;
-  transition: 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.productCard:active {
-  
-  box-shadow: 0 5px #5ed588;
-  transform: translateY(4px);
-  transition: 0.2s;
-}
-
-.aceiteIndividual{
-  width: 30px;
+.aceiteIndividual {
+  width: 50px;
   padding: 10px;
 }
 
-.card-body{
-  background-color: #dcdada;
-  padding: 10px; 
+.card-body {
+  background-color: #edf2f7;
+  padding: 10px;
   width: 100%;
   height: 100%;
 }
 
-
-.card-title{
-  color: #000000;
+.card-title {
+  color: #2d3748;
   font-weight: bold;
-  font-size: 80%;
-  font-family: Arial, Helvetica, sans-serif; 
-  margin: 0px; 
-  padding: 0px; 
-   
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
-.card-text{
-  line-height: 0.5;
-  font-size: 80%;
-  color: #000000;
+.card-text {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #4a5568;
   text-align: center;
 }
 
-.productCard.petronas{
-  box-shadow: 2px 7px 13px 5px rgba(0, 174, 157, 0.700);
+.productCard.petronas {
+  box-shadow: 0 4px 10px rgba(0, 174, 157, 0.7);
 }
-
-.productCard.castrol{
-  box-shadow: 2px 7px 13px 5px rgba(9, 191, 52, 0.7);
+.productCard.castrol {
+  box-shadow: 0 4px 10px rgba(9, 191, 52, 0.7);
 }
-.productCard.total{
-  box-shadow: 2px 7px 13px 5px rgba(210, 22, 5, 0.7);
+.productCard.total {
+  box-shadow: 0 4px 10px rgba(210, 22, 5, 0.7);
 }
-.productCard.elf{
-  box-shadow: 2px 7px 13px 5px rgba(83, 7, 206, 0.7);
+.productCard.elf {
+  box-shadow: 0 4px 10px rgba(83, 7, 206, 0.7);
 }
-.productCard.alder{
-  box-shadow: 2px 7px 13px 5px rgba(4, 239, 180, 0.7);
+.productCard.alder {
+  box-shadow: 0 4px 10px rgba(4, 239, 180, 0.7);
 }
-.productCard.repsol{
-  box-shadow: 2px 7px 13px 5px rgba(243, 79, 3, 0.7);
+.productCard.repsol {
+  box-shadow: 0 4px 10px rgba(243, 79, 3, 0.7);
 }
-
-
-
 
 /*=======================================CREATE FORM============================================================*/
-.formCreateProduct{
-  
-  border-radius: 50px;
+.formCreateProduct {
+  border-radius: 16px;
   padding: 50px;
   margin: auto;
   min-width: min-content;
-  height: 50vh;
+  height: auto;
   width: 50vw;
-  display: flex;  
-  box-shadow: 0px 0px 32px 10px #35d305;
-  
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.textInputs{
-  
- display: flex;
- flex-direction: column;
- align-content: center;
-
- padding: 1%;
- margin: auto;
-
+.textInputs {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 1%;
+  margin: auto;
 }
-
 
 input::placeholder {
-
   text-align: center;
-
+  color: #a0aec0;
 }
 
-.approvalAdder{
-
+.approvalAdder {
+  width: 100%;
   display: flex;
-
+  justify-content: space-around;
 }
 
-.allApprovals{
-  
-  height: 100%;
-  overflow: scroll;
-
+.allApprovals {
+  border: 2px solid green;
+  height: 300px;
+  overflow-y: auto;
+  background: #e6fffa;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 /*===========================================MODAL======================================================================*/
@@ -215,17 +237,18 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: myAnim 0.5s linear 0s 1 normal forwards;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .modal-content {
   background: white;
   margin: auto;
-  color: blue;
+  color: #2d3748;
   padding: 20px;
-  border-radius: 50px;
+  border-radius: 16px;
   max-width: 500px;
   width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .close-button {
@@ -233,27 +256,47 @@ input::placeholder {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #e53e3e;
+  transition: color 0.3s;
 }
-@keyframes myAnim {
-	0% {
-		opacity: 0;
-    background: rgba(0, 0, 0, 0);
-		transform: scale(0.2);
-	}
+.close-button:hover {
+  color: #c53030;
+}
 
-	80% {
-		opacity: 0.8;
-    background: rgba(0, 0, 0, 0);
-		transform: scale(0.5);
-	}
-  99% {
-		opacity: 1;
-    background: rgba(0, 0, 0, 0);
-		transform: scale(1);
-	}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e2e8f0;
+  border-top: 5px solid #3182ce;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,24 +1,21 @@
-import { useState } from "react"
-import approvals from "../assets/approvals"
-
+import { useState } from "react";
+import approvals from "../assets/approvals";
 
 function FormCreateProduct() {
-  const [brand, setBrand] = useState("")
-  const [sae, setSae] = useState("")
-  const [gamma, setGammma] = useState("")
-  const [subname, setSubname] = useState("")
-  const [liters, setLiters] = useState("")
-  const [price,setPrice] = useState("")
-  const [selectedApprovals, setSelectedApprovals] = useState([])
-  const [expandedKey, setExpandedKey] = useState(null)
+  const [brand, setBrand] = useState("");
+  const [sae, setSae] = useState("");
+  const [gamma, setGammma] = useState("");
+  const [subname, setSubname] = useState("");
+  const [liters, setLiters] = useState("");
+  const [price, setPrice] = useState("");
+  const [selectedApprovals, setSelectedApprovals] = useState([]);
+  const [expandedKey, setExpandedKey] = useState(null);
 
-  const urlApiCreate = `${import.meta.env.VITE_APP_APIURL}/create`
-  const [res, setRes] = useState(null)
-
+  const urlApiCreate = `${import.meta.env.VITE_APP_APIURL}/create`;
+  const [res, setRes] = useState(null);
 
   const handleSubmit = async (e) => {
-    
-    e.preventDefault()
+    e.preventDefault();
     setRes("");
     const payload = {
       brand,
@@ -29,7 +26,7 @@ function FormCreateProduct() {
       price: Number(price),
       approval: selectedApprovals,
     };
-    console.log(payload)
+    console.log(payload);
     try {
       const response = await fetch(urlApiCreate, {
         method: "POST",
@@ -38,40 +35,40 @@ function FormCreateProduct() {
         },
         body: JSON.stringify(payload),
       });
-      console.log("Response status:", response.status)
+      console.log("Response status:", response.status);
       if (response.ok) {
-        const data = await response.json()
-        setRes(` ${data.brand} ${data.sae}`)
-        setBrand("")
-        setGammma("")
-        setSae("")
-        setSubname("")
-        setLiters("")
-        setPrice("")
-        setSelectedApprovals([])
-      }else{
-        console.error("Error in response:", response.statusText)
+        const data = await response.json();
+        setRes(` ${data.brand} ${data.sae}`);
+        setBrand("");
+        setGammma("");
+        setSae("");
+        setSubname("");
+        setLiters("");
+        setPrice("");
+        setSelectedApprovals([]);
+      } else {
+        console.error("Error in response:", response.statusText);
       }
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
   const handleApprovalChange = (approval) => {
     setSelectedApprovals((prevState) =>
       prevState.includes(approval)
         ? prevState.filter((a) => a !== approval)
         : [...prevState, approval]
-    )
-  }
+    );
+  };
   const handleKeyClick = (key) => {
-    setExpandedKey(expandedKey === key ? null : key)
-  }
-
+    setExpandedKey(expandedKey === key ? null : key);
+  };
 
   return (
     <>
       <form className="formCreateProduct" onSubmit={handleSubmit}>
         <div className="textInputs">
+
           <input
             type="text"
             value={brand}
@@ -127,11 +124,13 @@ function FormCreateProduct() {
         </div>
 
         <div className="approvalAdder">
-          
-          <div className="allApprovals" >
+          <div className="allApprovals">
             {Object.entries(approvals).map(([key, values]) => (
-              <div key={key} >
-                <div onClick={() => handleKeyClick(key)} style={{ cursor: "pointer", fontWeight: "bold" }}>
+              <div key={key}>
+                <div
+                  onClick={() => handleKeyClick(key)}
+                  style={{ cursor: "pointer", fontWeight: "bold" }}
+                >
                   {key}
                 </div>
                 {expandedKey === key && (
@@ -142,10 +141,16 @@ function FormCreateProduct() {
                           type="checkbox"
                           id={`approval-${key}-${index}`}
                           value={`${key}: ${value}`}
-                          onChange={() => handleApprovalChange(`${key}: ${value}`)}
-                          checked={selectedApprovals.includes(`${key}: ${value}`)}
+                          onChange={() =>
+                            handleApprovalChange(`${key}: ${value}`)
+                          }
+                          checked={selectedApprovals.includes(
+                            `${key}: ${value}`
+                          )}
                         />
-                        <label htmlFor={`approval-${key}-${index}`}>{value}</label>
+                        <label htmlFor={`approval-${key}-${index}`}>
+                          {value}
+                        </label>
                       </div>
                     ))}
                   </div>
@@ -155,9 +160,9 @@ function FormCreateProduct() {
           </div>
           <div>
             <div className="selectedApprovals">
-            <h4>Selected Approvals</h4>
+              <h4>Selected Approvals</h4>
               {selectedApprovals.map((approval, index) => (
-                <div  key={index}>{approval}</div >
+                <div key={index}>{approval}</div>
               ))}
             </div>
           </div>
@@ -167,7 +172,7 @@ function FormCreateProduct() {
       </form>
       {res && <h2>Se ha creado el producto : {res}</h2>}
     </>
-  )
+  );
 }
 
-export default FormCreateProduct
+export default FormCreateProduct;
